@@ -143,11 +143,7 @@ body {
   top: 28px;
   right: 40px;
   z-index: 999;
-<<<<<<< HEAD
-  background-color: #4CAF50;
-=======
   background-color: #4caf50;
->>>>>>> 3ae30611f91d89900b5fd94d5ed84abcb1a8bbb9
   color: white;
   padding: 10px 30px;
   font-family: "Poppins", sans-serif;
@@ -156,18 +152,10 @@ body {
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-<<<<<<< HEAD
 }
 
 .btn-jogos-top:hover {
   background-color: #308f35;
-=======
-  white-space: nowrap;
-}
-
-.btn-jogos-top:hover {
-  background-color: #238f29;
->>>>>>> 3ae30611f91d89900b5fd94d5ed84abcb1a8bbb9
 }
 
 /*MAIN*/
