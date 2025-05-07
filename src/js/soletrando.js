@@ -28,8 +28,9 @@ botoesContainer.classList.add("soletrando-letras");
 const tentativaTexto = document.createElement("p");
 tentativaTexto.classList.add("feedback");
 
-document.body.querySelector(".footer").before(container);
-container.append(imagem, botoesContainer, tentativaTexto);
+document.body.querySelector(".main").after(container);
+container.append(botoesContainer, tentativaTexto);
+
 
 function reiniciarJogo() {
   indiceAtual = 0;

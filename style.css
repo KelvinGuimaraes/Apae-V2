@@ -5,87 +5,13 @@
 
 /*RESET*/
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet,object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav, 
+output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -102,6 +28,48 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .main-cards-numeros,
+  .main-cards-necessidades,
+  .main-cards-cores,
+  .main-cards-soletrando {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .btn-jogos-top {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .section {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+
+  .apoio {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .apoio-img,
+  .apoio2 {
+    width: 80%;
+  }
 }
 
 /*BODY*/
@@ -164,7 +132,7 @@ body {
   flex: 1 1 0;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10em;
+  padding-bottom: 10px;
 }
 
 .main-cards-numeros {
@@ -196,6 +164,19 @@ body {
   column-gap: 6em;
   row-gap: 3em;
   padding: 1em 0;
+}
+
+.main-cards-soletrando {
+  display: flex;
+  align-items: center; /* Alinhado */
+  justify-content: center; /* Alinhado */
+  flex-wrap: wrap;
+  width: 1400rem;
+  column-gap: 6em;
+  gap: 3rem;
+  padding: 1rem 0;
+  margin-bottom: 5px;
+  margin-right: 100px;
 }
 
 .card {
@@ -390,4 +371,90 @@ a.eu_ouco {
   position: relative;
   top: 9px;
   width: 140%;
+}
+
+/*SOLETRANDO*/
+
+/* Botões de letras: aparência padrão */
+.letra-btn {
+  background-color: #73b369;
+  color: #fff; /* Aumentado o contraste para acessibilidade */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estado desativado (feedback visual + cursor) */
+.letra-btn.disabled {
+  opacity: 0.5;
+  transform: scale(0.95);
+  cursor: not-allowed;
+}
+
+/* Estado de foco para teclado/acessibilidade */
+.letra-btn:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
+}
+
+/* Hover com aumento visual */
+.letra-btn:hover:not(.disabled) {
+  background-color: #8eaf89;
+  transform: scale(1.1);
+}
+
+/* Novo: feedback de clique ativo */
+.letra-btn:active:not(.disabled) {
+  transform: scale(0.95);
+  background-color: #5e9e63;
+}
+
+/* Contêiner geral do jogo mais responsivo */
+.soletrando-container {
+  display: flex;
+  flex-direction:column;
+  align-items: center; /* Alinhado */
+  justify-content: center;
+  width: 100%; /* Largura total do contêiner */
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+
+/* Contêiner dos botões de letras */
+.soletrando-letras {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaço entre os botões */
+  margin-top: 20px;
+}
+
+/* Texto de feedback (resposta correta ou errada) */
+.feedback {
+  margin-top: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Cor e estilo do feedback correto */
+.feedback.correto {
+  color: #4caf50;
+  font-weight: bold;
+  animation: pulse 0.5s ease; /* Animação opcional */
+}
+
+/* Cor e estilo do feedback errado */
+.feedback.errado {
+  color: #ff0000;
+  font-weight: bold;
+  animation: pulse 0.5s ease; /* Animação opcional */
+}
+
+/* Animação visual para feedback */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }

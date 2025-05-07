@@ -14,14 +14,17 @@
     />
   </head>
   <body>
-    <div class="header">
+    <header class="header">
       <div class="btn-jogos-top">
         <a href="/index.html" class="btn-jogos">Voltar</a>
       </div>
       <div class="container">
-        <a href="/index.html"
-          ><img src="/src/images/logo apae caruaru.svg" alt="Logo da Apae"
-        /></a>
+        <a href="/index.html">
+          <img
+            src="/src/images/logo apae caruaru.svg"
+            alt="Logo da Apae Caruaru"
+          />
+        </a>
       </div>
       <div class="row">
         <div class="apoio">
@@ -29,57 +32,73 @@
             <img
               class="apoio-img apoio1"
               src="/src/images/UNIFAVIP TAGLINE - VERMELHO E ROXO.png"
-              alt=""
+              alt="Logotipo da UNIFAVIP nas cores vermelho e roxo"
             />
           </div>
           <div>
             <img
               class="apoio-img apoio2"
               src="/src/images/logoROXOeVERMELHO.png"
-              alt=""
+              alt="Logotipo com roxo e vermelho"
             />
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="main">
+    <main class="main">
+      <div class="soletrando-container">
+        <div class="soletrando-letras"></div>
+        <p class="feedback"></p>
+      </div>
+      
       <div class="main-cards-soletrando">
-        <div clas="card">
-          <div class="card-figure soletrando">
-            <src const></src>
-
+        <div class="card">
+          <div class="card-figure">
+            <img class="soletrando-imagem" src="" alt="Imagem do jogo" />
             <img
               class="audio-verde-img"
               src="/src/images/audio-verde.png"
               alt="audio-verde-img"
             />
           </div>
+
+          <audio id="soletrando_player">
+            <source src="/src/audio/soletrando/" type="audio/mp3" />
+          </audio>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
       <ul class="footer-sections">
-        <div class="footer-sections-separation">
+        <li class="section NECESSIDADES">
           <a draggable="false" href="/jogos.html">
-            <li class="section NECESSIDADES"><p>Calculadora</p></li>
+            <p>Calculadora</p>
           </a>
+        </li>
+        <li class="section CORES">
           <a draggable="false" href="/src/jogos/soletrando.html">
-            <li class="section CORES"><p>Soletrando</p></li>
+            <p>Soletrando</p>
           </a>
+        </li>
+        <li class="section NUMEROS">
           <a draggable="false" href="/src/jogos/misturandoCores.html">
-            <li class="section NUMEROS"><p>Misturando Cores</p></li>
+            <p>Misturando Cores</p>
           </a>
+        </li>
+        <li class="section ANIMAIS">
           <a draggable="false" href="/src/jogos/adivinhaAnimais.html">
-            <li class="section ANIMAIS"><p>Adivinhação</p></li>
+            <p>Adivinhação</p>
           </a>
+        </li>
+        <li class="section JOGOS">
           <a draggable="false" href="/src/jogos/memoria.html">
-            <li class="section JOGOS"><p>Memória</p></li>
+            <p>Memória</p>
           </a>
-        </div>
+        </li>
       </ul>
-    </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="/src/js/soletrando.js"></script>
