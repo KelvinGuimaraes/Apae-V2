@@ -1,15 +1,15 @@
 const palavras = [
-  { palavra: "amarelo", imagem: "src/images/soletrando/amarelo.jpeg" },
-  { palavra: "vermelho", imagem: "src/images/soletrando/vermelho.jpeg" },
-  { palavra: "azul", imagem: "src/images/soletrando/azul.jpeg" },
-  { palavra: "casa", imagem: "src/images/soletrando/casa.jpeg" },
-  { palavra: "carro", imagem: "src/images/soletrando/carro.jpeg" },
-  { palavra: "bola", imagem: "src/images/soletrando/bola.jpeg" },
-  { palavra: "mamãe", imagem: "src/images/soletrando/mamãe.jpeg" },
-  { palavra: "papai", imagem: "src/images/soletrando/papai.jpeg" },
-  { palavra: "gato", imagem: "src/images/soletrando/gato.jpeg" },
-  { palavra: "cachorro", imagem: "src/images/soletrando/cachorro.jpeg" },
-  { palavra: "peixe", imagem: "src/images/soletrando/peixe.jpeg" },
+  { palavra: "amarelo", imagem: "../images/soletrando/amarelo.jpeg" },
+  { palavra: "vermelho", imagem: "../images/soletrando/vermelho.jpeg" },
+  { palavra: "azul", imagem: "../images/soletrando/azul.jpeg" },
+  { palavra: "casa", imagem: "../images/soletrando/casa.jpeg" },
+  { palavra: "carro", imagem: "../images/soletrando/carro.jpeg" },
+  { palavra: "bola", imagem: "../images/soletrando/bola.jpeg" },
+  { palavra: "mamãe", imagem: "../images/soletrando/mamãe.jpeg" },
+  { palavra: "papai", imagem: "../images/soletrando/papai.jpeg" },
+  { palavra: "gato", imagem: "../images/soletrando/gato.jpeg" },
+  { palavra: "cachorro", imagem: "../images/soletrando/cachorro.jpeg" },
+  { palavra: "peixe", imagem: "../images/soletrando/peixe.jpeg" },
   // Adicionar os outros aqui
 ];
 
@@ -31,6 +31,8 @@ tentativaTexto.classList.add("feedback");
 document.body.querySelector(".main").after(container);
 container.append(botoesContainer, tentativaTexto);
 
+document.querySelector(".card-figure").append(imagem);
+container.append(imagem);
 
 function reiniciarJogo() {
   indiceAtual = 0;
@@ -54,7 +56,10 @@ function iniciarRodada() {
   }
 
   const palavraAtual = palavras[indiceAtual];
-  imagem.src = palavraAtual.imagem;
+  
+  const cardImagem = document.querySelector(".card-img ");
+  cardImagem.src = palavraAtual.imagem; // Define o caminho da imagem
+  cardImagem.alt = `Imagem da palavra ${palavraAtual.palavra}`; // Texto alternativo
 
   const letras = palavraAtual.palavra.split("").sort(() => 0.5 - Math.random());
 

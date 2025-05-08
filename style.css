@@ -85,7 +85,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
 }
 
 .container {
@@ -132,7 +132,7 @@ body {
   flex: 1 1 0;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 8rem;
 }
 
 .main-cards-numeros {
@@ -168,15 +168,15 @@ body {
 
 .main-cards-soletrando {
   display: flex;
-  align-items: center; /* Alinhado */
-  justify-content: center; /* Alinhado */
-  flex-wrap: wrap;
-  width: 1400rem;
-  column-gap: 6em;
-  gap: 3rem;
-  padding: 1rem 0;
-  margin-bottom: 5px;
-  margin-right: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto; /* Centraliza horizontalmente */
+  margin-left: 670px; /* Ajuste conforme necessário */
+  height: 250px;
+  width: 289px;
+  border-radius: 15px;
+  cursor: pointer;;
 }
 
 .card {
@@ -192,10 +192,9 @@ body {
 }
 
 .card-figure {
-  width: 101%;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
+  display: flex; /* Ativa o Flexbox no contêiner pai */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
 }
 
 .audio-verde-img {
@@ -421,6 +420,7 @@ a.eu_ouco {
   width: 100%; /* Largura total do contêiner */
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
+  margin-top: -10rem;
 }
 
 /* Contêiner dos botões de letras */
@@ -457,4 +457,15 @@ a.eu_ouco {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
+}
+
+.card-img {
+ display: block;
+  height: 110%; /* Faz a imagem ocupar toda a altura do card */
+  width: 100%; /* Faz a imagem ocupar toda a largura do card */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
+  border-radius: 15px; /* Mantém o arredondamento */
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+  overflow: hidden;
 }
