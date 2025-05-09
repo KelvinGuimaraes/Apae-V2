@@ -53,11 +53,12 @@ function normalizarLetra(letra) {
   return mapa[letra] || letra;
 }
 
-function reiniciarJogo() {
-  indiceAtual = 0;
-  // Embaralha a ordem das palavras para um novo jogo
-  palavras.sort(() => 0.5 - Math.random());
-  iniciarRodada();
+function embaralharArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function iniciarRodada() {
@@ -95,7 +96,7 @@ function iniciarRodada() {
     audioRepetir.play();
   };
 
-  const letras = palavraAtual.palavra.split("").sort(() => 0.5 - Math.random());
+  const letras = embaralharArray(palavraAtual.palavra.split(""));
 
   letras.forEach((letra, index) => {
     const btn = document.createElement("button");
