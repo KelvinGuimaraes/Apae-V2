@@ -64,24 +64,120 @@
       </ul>
     </div>
     <!-- Botão para Animais -->
-     <div class="tab-container">
-      <button class="button-animais">Doméstico</button>
-      <button class="button-animais">Fazenda</button>
-      <button class="button-animais">Selva</button>
-      <button class="button-animais">Mar</button>
+   <div class="button-grupo">
+   <button onclick="mostrarGrupo('selva')">Selva</button>
+   <button onclick="mostrarGrupo('domestico')">Domestico</button>
+   <button onclick="mostrarGrupo('mar')">Mar</button>
+   <button onclick="mostrarGrupo('fazenda')">Fazenda</button>
+   </div>
+
+   <!-- Grupo Selva -->
+   <div id="selva" class="grupo">
+    <div class="animal">
+      <img src="src/images/animais/leão.jpg" alt="Leão" onclick="tocarSom('src/audio/animais/leão.mp3')">
+      <p>Leão</p>
+    </div>
+    <div class="animal">
+      <img src="src/images/animais/macaco.jpg" alt="Macaco" onclick="tocarSom('src/audio/animais/macaco.mp3')">
+      <p>Macaco</p>
+    </div>
+    <div class="animal">
+      <img src="src/images/animais/elefante.jpg" alt="Elefante" onclick="tocarSom('src/audio/animais/elefante.mp3')">
+      <p>Elefante</p>
+    </div>
+    <div class="animal">
+      <img src="src/images/animais/tigre.jpg" alt="Tigre" onclick="tocarSom('src/audio/animais/tigre.mp3')">
+      <p>Tigre</p>
+    </div>
+    <div class="animal">
+      <img src="src/images/animais/girafa.jpg" alt="Girafa" onclick="tocarSom('src/audio/animais/girafa.mp3')">
+      <p>Girafa</p>
+    </div>
+    <div class="animal">
+      <img src="src/images/animais/onça.jpg" alt="Onça" onclick="tocarSom('src/audio/animais/onça.mp3')">
+      <p>Onça</p>
+    </div>
+   </div>
+
+    <!-- Grupo Doméstico -->
+     <div id="domestico" class="grupo">
+      <div class="animal">
+        <img src="src/images/animais/cachorro.jpg" alt="Cachorro" onclick="tocarSom('src/audio/animais/cachorro.mp3')">
+        <p>Cachorro</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/gato.jpg" alt="Gato" onclick="tocarSom('src/audio/animais/gato.mp3')">
+        <p>Gato</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/hamster.jpg" alt="Hamster" onclick="tocarSom('src/audio/animais/hamster.mp3')">
+        <p>Hamster</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/coelho.jpg" alt="Coelho" onclick="tocarSom('src/audio/animais/coelho.mp3')">
+        <p>Coelho</p>
+      </div>
      </div>
 
-     <!-- Modal Para animais -->
-      <div id="modal-animais" class="modal-animais">
-        <div class="modal-content">
-          <span class="close-modal">&times;</span>
-          <h2 id="modal-titulo"></h2>
-          <div class="galeria-animais" id="galeria-animais">
-            <!-- Imagens vão ser carregadas via javaScipt -->
-          </div>
-        </div>
+    <!-- Grupo Mar -->
+    <div id="mar" class="grupo">
+      <div class="animal">
+        <img src="src/images/animais/golfinho.jpg" alt="Golfinho" onclick="tocarSom('src/audio/animais/golfinho.mp3')">
+        <p>Golfinho</p>
       </div>
-    
+      <div class="animal">
+        <img src="src/images/animais/baleia.jpg" alt="Baleia" onclick="tocarSom('src/audio/animais/baleia.mp3')">
+        <p>Baleia</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/tubarão.jpg" alt="Tubarão" onclick="tocarSom('src/audio/animais/tubarão.mp3')">
+        <p>Tubarão</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/estrela.jpg" alt="Estrela do Mar" onclick="tocarSom('src/audio/animais/estrela.mp3')">
+        <p>Estrela do Mar</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/polvo.jpg" alt="Polvo" onclick="tocarSom('src/audio/animais/polvo.mp3')">
+        <p>Polvo</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/cavalo marinho.jpg" alt="Cavalo Marinho" onclick="tocarSom('src/audio/animais/cavalo marinho.mp3')">
+        <p>Cavalo Marinho</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/peixe.jpg" alt="Peixe" onclick="tocarSom('src/audio/animais/peixe.mp3')">
+        <p>Peixe</p>
+      </div>
+    </div>
+
+    <!-- Grupo Fazenda -->
+     <div id="fazenda" class="grupo">
+      <div class="animal">
+        <img src="src/images/animais/cavalo.jpg" alt="Cavalo" onclick="tocarSom('src/audio/animais/cavalo.mp3')">
+        <p>Cavalo</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/vaca.jpg" alt="Vaca" onclick="tocarSom('src/audio/animais/vaca.mp3')">
+        <p>Vaca</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/galinha.jpg" alt="Galinha" onclick="tocarSom('src/audio/animais/galinha.mp3')">
+        <p>Galinha</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/porco.jpg" alt="Porco" onclick="tocarSom('src/audio/animais/porco.mp3')">
+        <p>Porco</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/ovelha.jpg" alt="ovelha" onclick="tocarSom('src/audio/animais/ovelha.mp3')">
+        <p>Ovelha</p>
+      </div>
+      <div class="animal">
+        <img src="src/images/animais/pato.jpg" alt="Pato" onclick="tocarSom('src/audio/animais/pato.mp3')">
+        <p>Pato</p>
+      </div>
+    </div>
     <!-- JavaScript -->
     <script src="src/js/animais.js"></script>
   </body>
