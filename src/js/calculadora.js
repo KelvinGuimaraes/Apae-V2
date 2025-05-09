@@ -8,25 +8,37 @@ function appendToDisplay(input) {
 
   const lastChar = realExpression.slice(-1);
 
-  // Verificar se o input é um operador
   if (operadores.includes(input)) {
     if (realExpression === "" || operadores.includes(lastChar)) {
-      return; // não permite operadores repetidos ou no início
+      return;
     }
     realExpression += input;
-    displayExpression += operadoresDisplay[input] || input; // mostra símbolo bonito
+    displayExpression += operadoresDisplay[input] || input;
   } else {
     realExpression += input;
     displayExpression += input;
   }
 
   display.value = displayExpression;
+
+  // 🔊 Reproduz som para números ou operadores
+  const audio = document.getElementById(`audio_${input}`);
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play();
+  }
 }
 
 function clearDisplay() {
   realExpression = "";
   displayExpression = "";
   display.value = "";
+
+  const audio = document.getElementById("audio_C");
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play();
+  }
 }
 
 function calculate() {
@@ -40,4 +52,11 @@ function calculate() {
     realExpression = "";
     displayExpression = "";
   }
+
+  const audio = document.getElementById("audio_=");
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play();
+  }
 }
+
