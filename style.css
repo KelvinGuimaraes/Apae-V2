@@ -391,3 +391,67 @@ a.eu_ouco {
   top: 9px;
   width: 140%;
 }
+
+.grupo {
+  display: none; 
+  margin-top: -50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.animal {
+  text-align: center;
+}
+
+.animal img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain; 
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: white; 
+}
+
+
+.animal img:hover {
+  transform: scale(1.1);
+}
+
+.animal p {
+  background-color:#73b369;
+  color: white;
+  margin-top: 8px;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+.button-grupo{
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 15px;
+  position: absolute;
+  row-gap: 30px;
+  padding: 20px;
+  top: 150px; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.button-grupo button{
+  padding: 15px 25px;
+  font-size: 30px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.button-grupo button:hover{
+  background-color: #388e3c;
+}
