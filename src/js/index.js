@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Map audio IDs para as Image classes
+    // Map audio IDs para as Image classesvgfggfgfgfg
     const audioImageMap = [
         { audioId: "estou_com_fome_player", imgClass: ".estou_com_fome" },
         { audioId: "estou_com_sede_player", imgClass: ".estou_com_sede" },
