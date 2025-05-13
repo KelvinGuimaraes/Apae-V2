@@ -80,7 +80,7 @@ body {
   /* background-color: black; */
 }
 
-/*HEADER*/
+/*=================== HEADER ===================*/
 .header {
   display: flex;
   align-items: center;
@@ -126,7 +126,7 @@ body {
   background-color: #308f35;
 }
 
-/*MAIN*/
+/*=================== MAIN ===================*/
 .main {
   display: flex;
   flex: 1 1 0;
@@ -135,7 +135,7 @@ body {
   padding-bottom: 8rem;
 }
 
-.main-cards-numeros {
+.main-cards-numeros { /*NUMEROS*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,7 +145,7 @@ body {
   padding: 2em 0;
 }
 
-.main-cards-necessidades {
+.main-cards-necessidades { /*NECESSIDADES*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@ body {
   padding: 1em 0;
 }
 
-.main-cards-cores {
+.main-cards-cores { /*CORES*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,12 +166,25 @@ body {
   padding: 1em 0;
 }
 
-.main-cards-soletrando {
+.main-cards-animais { /*ANIMAIS*/
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: flex-start; /* Alinha os itens no topo */
+  gap: 2rem; /* Espaçamento entre os itens */
+  margin-top: 100px; /* Espaçamento entre os botões e as imagens */
+  column-gap: 6em;
+  row-gap: 3em;
+  padding: 1rem 0;
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
+}
+
+.main-cards-soletrando { /*SOLETRANDO*/
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem auto; /* Centraliza horizontalmente */
+  margin: 2rem ; /* Centraliza horizontalmente */
   margin-left: 670px; /* Ajuste conforme necessário */
   height: 250px;
   width: 289px;
@@ -193,8 +206,8 @@ body {
 
 .card-figure {
   display: flex; /* Ativa o Flexbox no contêiner pai */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
+  justify-content: center; 
 }
 
 .audio-verde-img {
@@ -230,7 +243,56 @@ a.eu_ouco {
   border-radius: 10px;
 }
 
-/*CORES*/
+/*=================== CORES ===================*/
+
+.card.primarias,
+.card.secundarias,
+.card.terciarias {
+  display: none;
+}
+
+.buttons-cores {
+  text-align: center;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+}
+
+button {
+  z-index: 999;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+  button:hover {
+    background-color: #396b3b;
+  }
+
+.card.ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  width: 189px;
+  border-radius: 15px;
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+}
 
 .amarelo {
   background-color: #ffd74a;
@@ -248,28 +310,12 @@ a.eu_ouco {
   background-color: #10cb00;
 }
 
-.marrom {
-  background-color: #d1795d;
-}
-
 .rosa {
   background-color: #ff8ddf;
 }
 
 .roxo {
-  background-color: #901cec;
-}
-
-.preto {
-  background-color: #000000;
-}
-
-.branco {
-  background-color: #ffffff;
-}
-
-.cinza {
-  background-color: #d9d9d9;
+  background-color: #913ad8;
 }
 
 .laranja {
@@ -292,7 +338,44 @@ a.eu_ouco {
   background-color: #04ffff;
 }
 
-/*FOOTER*/
+.vermelho-alaranjado {
+  background-color: #e46e42;
+}
+
+.amarelo-esverdeado {
+  background-color: #c5f700;
+}
+
+.azul-arroxeado {
+  background-color: #514cdc;
+}
+
+.laranja-rosado {
+  background-color: #ff9c8a;
+}
+
+.amarelo-alaranjado {
+  background-color: #fcb034;
+}
+
+/* CORES SEM ULTILIZAÇÃO, CASO QUEIRA ULTILIZAR DESCOMENTE E ADICIONE A CLASSE NO HTML
+.marrom {
+  background-color: #d1795d;
+}
+
+.preto {
+  background-color: #000000;
+}
+
+.branco {
+  background-color: #ffffff;
+}
+
+.cinza {
+  background-color: #d9d9d9;
+}*/
+
+/*=================== FOOTER ===================*/
 .footer {
   bottom: 0;
   position: fixed;
@@ -372,12 +455,12 @@ a.eu_ouco {
   width: 140%;
 }
 
-/*SOLETRANDO*/
+/*================== SOLETRANDO ==================*/
 
 /* Botões de letras: aparência padrão */
 .letra-btn {
   background-color: #73b369;
-  color: #fff; /* Aumentado o contraste para acessibilidade */
+  color: #fff; 
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.6rem 1rem;
@@ -415,7 +498,7 @@ a.eu_ouco {
 .soletrando-container {
   display: flex;
   flex-direction:column;
-  align-items: center; /* Alinhado */
+  align-items: center;
   justify-content: center;
   width: 100%; /* Largura total do contêiner */
   font-family: "Poppins", sans-serif;
@@ -468,4 +551,48 @@ a.eu_ouco {
   box-shadow: #73b369 0px 4px 30px;
   cursor: pointer;
   overflow: hidden;
+}
+
+/*================== Animais ==================*/
+
+.pagina-animais .grupo .card{
+  margin: 10px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-animais .card-figure img{
+  height: 100%;
+  width: 100%; 
+  object-fit: cover; 
+  border-radius: 15px; 
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+ 
+.button-grupo {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  row-gap: 30px;
+  padding: 10px;
+  top: 150px; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.button-grupo button{
+  padding: 15px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.button-grupo button:hover {
+  background-color: #396b3b;
 }
