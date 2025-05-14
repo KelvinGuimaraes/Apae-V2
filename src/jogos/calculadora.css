@@ -1,3 +1,7 @@
+.calculadora-container {
+  position: relative;
+}
+
 .main-calculadora {
     position: absolute;
     top: 50%;
