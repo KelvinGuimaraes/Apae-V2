@@ -73,7 +73,7 @@ function iniciarRodada() {
     tentativaTexto.classList.add("correto");
 
     // TOCA SOM DE VITÓRIA
-    const somVitoria = new Audio("../audio/soletrando/efeito-vitória.mp3");
+    const somVitoria = new Audio("../audio/efeito-vitória.mp3");
     somVitoria.play();
 
     setTimeout(reiniciarJogo, 5000); // Reinicia após 5 segundos (tempo da musica terminar)
@@ -130,7 +130,7 @@ function iniciarRodada() {
         if (tentativa.length === palavraAtual.palavra.length) {
           if (tentativa === palavraAtual.palavra) {
           // TOCA SOM DE ACERTO
-            const somAcerto = new Audio("../audio/soletrando/efeito_acerto.mp3");
+            const somAcerto = new Audio("../audio/efeito_acerto.mp3");
             somAcerto.play();
 
             tentativaTexto.textContent = "✅ Correto! Próxima palavra...";
@@ -139,7 +139,7 @@ function iniciarRodada() {
             setTimeout(iniciarRodada, 1500);
           } else {
             // TOCA SOM DE ERRO
-            const somErro = new Audio("../audio/soletrando/efeito-erro.mp3");
+            const somErro = new Audio("../audio/efeito-erro.mp3");
             somErro.play();
 
             tentativaTexto.textContent = "❌ Tente novamente!";

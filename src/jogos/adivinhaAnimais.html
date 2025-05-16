@@ -6,6 +6,7 @@
     <title>Apae Jogos</title>
     <link rel="stylesheet" href="/reset.css" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/src/jogos/adivinhaAnimais.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,13 +45,19 @@
       </div>
     </div>
 
-    <div class="main">
-      <div class="main-cards-soletrando">
-        <div clas="card">
-          
-        </div>
+    <main class="adivinha-container">
+      <div id="game-container">
+        <div id="game-message" aria-live="polite" class="adivinha-pergunta"></div>
+        <div id="game-score"></div>
+        <div id="items-container"></div>
       </div>
-    </div>
+    </main>
+
+    <!-- Áudios de feedback -->
+    <audio id="audio-acerto" src="/src/audio/efeito_acerto.mp3" preload="auto"></audio>
+    <audio id="audio-erro" src="/src/audio/efeito-erro.mp3" preload="auto"></audio>
+    <audio id="audio-vitoria" src="/src/audio/efeito-vitória.mp3" preload="auto"></audio>
+
 
     <div class="footer">
       <ul class="footer-sections">

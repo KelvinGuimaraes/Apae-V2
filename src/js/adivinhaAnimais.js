@@ -1,189 +1,284 @@
 const allItems = [
-    { palavra: "Baleia", imagem: "../images/animais/baleia.jpeg", acertado: false },
-    { palavra: "Cavalo Marinho", imagem: "../images/animais/cavalo marinho.jpeg", acertado: false },
-    { palavra: "Cavalo", imagem: "../images/animais/cavalo.jpeg", acertado: false },
-    { palavra: "Coelho", imagem: "../images/animais/coelho.jpeg", acertado: false },
-    { palavra: "Elefante", imagem: "../images/animais/elefante.jpeg", acertado: false },
-    { palavra: "Estrela", imagem: "../images/animais/estrela.jpeg", acertado: false },
-    { palavra: "Galinha", imagem: "../images/animais/galinha.jpeg", acertado: false },
-    { palavra: "Girafa", imagem: "../images/animais/girafa.jpeg", acertado: false },
-    { palavra: "Gato", imagem: "../images/animais/gato.jpeg", acertado: false },
-    { palavra: "Cachorro", imagem: "../images/animais/cachorro.jpeg", acertado: false },
-    { palavra: "Golfinho", imagem: "../images/animais/golfinho.jpeg", acertado: false }, 
-    { palavra: "Hamster", imagem: "../images/animais/hamster.jpeg", acertado: false },
-    { palavra: "Leão", imagem: "../images/animais/leão.jpeg", acertado: false },
-    { palavra: "Macaco", imagem: "../images/animais/macaco.jpeg", acertado: false },
-    { palavra: "Onça", imagem: "../images/animais/onça.jpeg", acertado: false },
-    { palavra: "Ovelha", imagem: "../images/animais/ovelha.jpeg", acertado: false },
-    { palavra: "Pato", imagem: "../images/animais/pato.jpeg", acertado: false },
-    { palavra: "Peixe", imagem: "../images/animais/peixe.jpeg", acertado: false },
-    { palavra: "Polvo", imagem: "../images/animais/polvo.jpeg", acertado: false },
-    { palavra: "Porco", imagem: "../images/animais/porco.jpeg", acertado: false },
-    { palavra: "Tigre", imagem: "../images/animais/tigre.jpeg", acertado: false },
-    { palavra: "Tubarão", imagem: "../images/animais/tubarão.jpeg", acertado: false },
-    { palavra: "Vaca", imagem: "../images/animais/vaca.jpeg", acertado: false }
+  {
+    palavra: "a Baleia",
+    imagem: "/src/images/animais/baleia.jpg",
+    audioId: "../audio/adivinha/onde-esta-baleia.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Cavalo Marinho",
+    imagem: "/src/images/animais/cavalo marinho.jpg",
+    audioId: "../audio/adivinha/onde-esta-cavaloMarinho.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Cavalo",
+    imagem: "/src/images/animais/cavalo.jpg",
+    audioId: "../audio/adivinha/onde-esta-cavalo.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Coelho",
+    imagem: "/src/images/animais/coelho.jpg",
+    audioId: "../audio/adivinha/onde-esta-coelho.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Elefante",
+    imagem: "/src/images/animais/elefante.jpg",
+    audioId: "../audio/adivinha/onde-esta-elefante.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Estrela do Mar",
+    imagem: "/src/images/animais/estrela.jpg",
+    audioId: "../audio/adivinha/onde-esta-estrelaMar.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Galinha",
+    imagem: "/src/images/animais/galinha.jpg",
+    audioId: "../audio/adivinha/onde-esta-galinha.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Girafa",
+    imagem: "/src/images/animais/girafa.jpg",
+    audioId: "../audio/adivinha/onde-esta-girafa.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Gato",
+    imagem: "/src/images/animais/gato.jpg",
+    audioId: "../audio/adivinha/onde-esta-gato.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Cachorro",
+    imagem: "/src/images/animais/cachorro.jpg",
+    audioId: "../audio/adivinha/onde-esta-cachorro.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Golfinho",
+    imagem: "/src/images/animais/golfinho.jpg",
+    audioId: "../audio/adivinha/onde-esta-golfinho.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Hamster",
+    imagem: "/src/images/animais/hamster.jpg",
+    audioId: "../audio/adivinha/onde-esta-hamster.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Leão",
+    imagem: "/src/images/animais/leão.jpg",
+    audioId: "../audio/adivinha/onde-esta-leao.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Macaco",
+    imagem: "/src/images/animais/macaco.jpg",
+    audioId: "../audio/adivinha/onde-esta-macaco.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Onça",
+    imagem: "/src/images/animais/onça.jpg",
+    audioId: "../audio/adivinha/onde-esta-onça.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Ovelha",
+    imagem: "/src/images/animais/ovelha.jpg",
+    audioId: "../audio/adivinha/onde-esta-ovelha.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Pato",
+    imagem: "/src/images/animais/pato.jpg",
+    audioId: "../audio/adivinha/onde-esta-pato.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Peixe",
+    imagem: "/src/images/animais/peixe.jpg",
+    audioId: "../audio/adivinha/onde-esta-peixe.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Polvo",
+    imagem: "/src/images/animais/polvo.jpg",
+    audioId: "../audio/adivinha/onde-esta-polvo.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Porco",
+    imagem: "/src/images/animais/porco.jpg",
+    audioId: "../audio/adivinha/onde-esta-porco.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Tigre",
+    imagem: "/src/images/animais/tigre.jpg",
+    audioId: "../audio/adivinha/onde-esta-tigre.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "o Tubarão",
+    imagem: "/src/images/animais/tubarão.jpg",
+    audioId: "../audio/adivinha/onde-esta-tubarao.ogg",
+    acertado: false,
+  },
+  {
+    palavra: "a Vaca",
+    imagem: "/src/images/animais/vaca.jpg",
+    audioId: "../audio/adivinha/onde-esta-vaca.ogg",
+    acertado: false,
+  },
 ];
 
-// Variáveis do jogo
+// Estado do jogo
 let currentItem = null;
 let score = 0;
-let items = [...allItems];
-let lastWrongItem = null; // Guarda o último item errado
-const audioCorrect = new Audio('../audio/soletrando/efeito-acerto.mp3');
-const audioWrong = new Audio('../audio/soletrando/efeito-erro.mp3');
-const audioFinish = new Audio('../audio/soletrando/efeito-vitoria.mp3');
+let items = allItems.map(item => ({ ...item })); // clone para manipular
+let lastWrongItem = null;
 
-// Função para síntese de voz
-function speak(text) {
-    if ('speechSynthesis' in window) {
-        speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'pt-BR';
-        utterance.rate = 0.9;
-        speechSynthesis.speak(utterance);
-    }
+const audioCorrect = document.getElementById("audio-acerto");
+const audioWrong = document.getElementById("audio-erro");
+const audioFinish = document.getElementById("audio-vitoria");
+
+const messageEl = document.getElementById("game-message");
+const itemsContainer = document.getElementById("items-container");
+
+// Função para tocar áudio do item atual
+function playItemAudio(item) {
+  if (!item) return;
+  const questionAudio = new Audio(item.audioId);
+  questionAudio.play();
 }
 
-// Centraliza o jogo na tela
-function centerGame() {
-    const container = document.getElementById('game-container');
-    if (!container) return;
-    container.style.position = 'fixed';
-    container.style.top = '50%';
-    container.style.left = '50%';
-    container.style.transform = 'translate(-50%, -50%)';
-    container.style.textAlign = 'center';
-}
-
-// Pega a próxima palavra não acertada
+// Pega próximo item a adivinhar
 function getNextItem() {
-    // Primeiro tenta o último item errado
-    if (lastWrongItem && !lastWrongItem.acertado) {
-        return lastWrongItem;
-    }
-    // Depois pega qualquer item não acertado
-    const availableItems = items.filter(item => !item.acertado);
-    return availableItems[Math.floor(Math.random() * availableItems.length)];
+  if (lastWrongItem && !lastWrongItem.acertado) return lastWrongItem;
+  const availableItems = items.filter(i => !i.acertado);
+  if (availableItems.length === 0) return null;
+  return availableItems[Math.floor(Math.random() * availableItems.length)];
 }
 
-// Verifica se o jogo acabou
+// Verifica fim de jogo
 function checkGameEnd() {
-    return items.every(item => item.acertado);
+  return items.every(i => i.acertado);
 }
 
-// Finaliza o jogo
+// Exibe o fim do jogo
 function endGame() {
-    audioFinish.play();
-    speak("Parabéns! Você acertou todas as palavras!");
-    document.getElementById('game-message').textContent = "Fim do jogo! Todas as palavras foram acertadas!";
-    document.getElementById('items-container').innerHTML = '';
-    
-    // Botão de reinício
-    const restartBtn = document.createElement('button');
-    restartBtn.textContent = 'Jogar Novamente';
-    restartBtn.onclick = () => {
-        items = allItems.map(item => ({ ...item, acertado: false }));
-        score = 0;
-        lastWrongItem = null;
-        initGame();
-    };
-    document.getElementById('items-container').appendChild(restartBtn);
+  audioFinish.pause();
+  audioFinish.currentTime = 0;
+  audioFinish.play();
+  messageEl.textContent = "Parabéns!! Todos os animais foram encontrados!";
+  messageEl.classList.remove("errado");
+  messageEl.classList.add("correto"); 
+  itemsContainer.innerHTML = "";
+
+  const restartBtn = document.createElement("button");
+  restartBtn.textContent = "Jogar Novamente";
+  restartBtn.classList.add("adivinha-btn");
+  restartBtn.onclick = () => {
+    items = allItems.map(item => ({ ...item, acertado: false }));
+    score = 0;
+    lastWrongItem = null;
+    messageEl.classList.remove("correto"); 
+    updateGame();
+  };
+
+  itemsContainer.appendChild(restartBtn);
 }
 
-// Atualiza o jogo
+// Atualiza o jogo (pergunta e opções)
 function updateGame() {
-    if (checkGameEnd()) {
-        endGame();
-        return;
-    }
+  if (checkGameEnd()) {
+    endGame();
+    return;
+  }
 
-    const messageEl = document.getElementById('game-message');
-    const itemsContainer = document.getElementById('items-container');
-    
-    currentItem = getNextItem();
-    messageEl.textContent = `Encontre: ${currentItem.palavra}`;
-    itemsContainer.innerHTML = '';
-    
-    let shuffledItems = [...items] // Pega TODOS os 23 itens
-        .sort(() => Math.random() - 0.5) // Embaralha
-        .slice(0, 6); // Pega 6 aleatórios
-    
-    // Garante que o item atual está incluso
-    if (!shuffledItems.includes(currentItem)) {
-        shuffledItems[0] = currentItem;
-    }
-    
-    speak(`Onde está ${currentItem.palavra}?`);
-    
-    // Cria os cards
-    shuffledItems.forEach(item => {
-        const card = document.createElement('div');
-        card.style.margin = '10px';
-        card.style.display = 'inline-block';
-        
-        const img = document.createElement('img');
-        img.src = item.imagem;
-        img.alt = item.palavra;
-        img.style.width = '100px';
-        img.style.height = '100px';
-        img.style.objectFit = 'cover';
-        img.style.cursor = 'pointer';
-        
-        img.addEventListener('click', () => {
-            if (item === currentItem) {
-                item.acertado = true;
-                score++;
-                audioCorrect.play();
-                messageEl.textContent = 'Correto!';
-                lastWrongItem = null; // Reseta o último erro
-                speak('Muito bem!');
-                setTimeout(updateGame, 800);
-            } else {
-                audioWrong.play();
-                messageEl.textContent = 'Errado! Tente novamente';
-                lastWrongItem = currentItem; // Guarda o item errado
-                setTimeout(updateGame, 800);
-            }
-        });
-        
-        card.appendChild(img);
-        itemsContainer.appendChild(card);
-    });
+  currentItem = getNextItem();
+  if (!currentItem) return;
+
+  messageEl.textContent = `Onde está ${currentItem.palavra}?`;
+  itemsContainer.innerHTML = "";
+
+  // Escolhe 6 itens aleatórios, garante que currentItem esteja
+  let shuffledItems = [...items]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 6);
+
+  if (!shuffledItems.includes(currentItem)) {
+    const randomIndex = Math.floor(Math.random() * shuffledItems.length);
+    shuffledItems[randomIndex] = currentItem;
+  }
+
+  playItemAudio(currentItem);
+
+  // Cria cards
+  shuffledItems.forEach(item => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.tabIndex = 0; // acessível via teclado
+
+    const img = document.createElement("img");
+    img.src = item.imagem;
+    img.alt = item.palavra;
+
+    card.appendChild(img);
+    itemsContainer.appendChild(card);
+
+    card.onclick = () => handleChoice(item);
+    card.onkeypress = (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleChoice(item);
+      }
+    };
+  });
+}
+
+function handleChoice(item) {
+  if (item === currentItem) {
+    item.acertado = true;
+    score++;
+    audioCorrect.pause();
+    audioCorrect.currentTime = 0;
+    audioCorrect.play();
+    messageEl.textContent = "Correto!";
+    messageEl.classList.remove("errado");
+    messageEl.classList.add("correto");
+    lastWrongItem = null;
+    setTimeout(() => {
+      messageEl.classList.remove("correto");
+      updateGame();
+    }, 800);
+  } else {
+    audioWrong.pause();
+    audioWrong.currentTime = 0;
+    audioWrong.play();
+    messageEl.textContent = "Errado! Tente novamente";
+    messageEl.classList.remove("correto");
+    messageEl.classList.add("errado");
+    lastWrongItem = currentItem;
+    setTimeout(() => {
+      messageEl.classList.remove("errado");
+      updateGame();
+    }, 800);
+  }
 }
 
 // Inicializa o jogo
 function initGame() {
-    // Cria elementos da interface
-    const container = document.createElement('div');
-    container.id = 'game-container';
-    document.body.appendChild(container);
-    
-    const messageEl = document.createElement('div');
-    messageEl.id = 'game-message';
-    messageEl.style.fontSize = '24px';
-    messageEl.style.marginBottom = '20px';
-    container.appendChild(messageEl);
-    
-    const scoreEl = document.createElement('div');
-    scoreEl.id = 'game-score';
-    scoreEl.style.fontSize = '20px';
-    scoreEl.style.marginBottom = '20px';
-    container.appendChild(scoreEl);
-    
-    const itemsContainer = document.createElement('div');
-    itemsContainer.id = 'items-container';
-    itemsContainer.style.maxWidth = '500px';
-    container.appendChild(itemsContainer);
-    
-    centerGame();
-    updateGame();
+  updateGame();
 }
 
-// Quando a página carrega
-window.addEventListener('DOMContentLoaded', () => {
-    audioCorrect.src = 'correct.mp3';
-    audioWrong.src = 'wrong.mp3';
-    audioFinish.src = 'finish.mp3';
-    speechSynthesis.getVoices();
-    initGame();
+window.addEventListener("DOMContentLoaded", () => {
+  initGame();
 });
