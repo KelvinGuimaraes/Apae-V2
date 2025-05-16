@@ -5,87 +5,13 @@
 
 /*RESET*/
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet,object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav, 
+output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -104,6 +30,48 @@ a {
   user-select: none;
 }
 
+@media (max-width: 768px) {
+  .main-cards-numeros,
+  .main-cards-necessidades,
+  .main-cards-cores,
+  .main-cards-soletrando {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .btn-jogos-top {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .section {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+
+  .apoio {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .apoio-img,
+  .apoio2 {
+    width: 80%;
+  }
+}
+
 /*BODY*/
 body {
   min-height: 100vh;
@@ -112,12 +80,12 @@ body {
   /* background-color: black; */
 }
 
-/*HEADER*/
+/*=================== HEADER ===================*/
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
 }
 
 .container {
@@ -143,7 +111,7 @@ body {
   top: 28px;
   right: 40px;
   z-index: 999;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px 30px;
   font-family: "Poppins", sans-serif;
@@ -158,16 +126,16 @@ body {
   background-color: #308f35;
 }
 
-/*MAIN*/
+/*=================== MAIN ===================*/
 .main {
   display: flex;
   flex: 1 1 0;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10em;
+  padding-bottom: 8rem;
 }
 
-.main-cards-numeros {
+.main-cards-numeros { /*NUMEROS*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +145,7 @@ body {
   padding: 2em 0;
 }
 
-.main-cards-necessidades {
+.main-cards-necessidades { /*NECESSIDADES*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,9 +153,9 @@ body {
   flex-wrap: wrap;
   gap: 5em;
   padding: 1em 0;
-  }
+}
 
-.main-cards-cores {
+.main-cards-cores { /*CORES*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -198,53 +166,30 @@ body {
   padding: 1em 0;
 }
 
-.card.primarias,
-.card.secundarias,
-.card.terciarias {
-  display: none;
-}
-
-.buttons-cores {
-  text-align: center;
-  margin: 40px 0;
+.main-cards-animais { /*ANIMAIS*/
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 200px;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: flex-start; /* Alinha os itens no topo */
+  gap: 2rem; /* Espaçamento entre os itens */
+  margin-top: 100px; /* Espaçamento entre os botões e as imagens */
+  column-gap: 6em;
+  row-gap: 3em;
+  padding: 1rem 0;
+  width: 100%; /* Garante que o contêiner ocupe toda a largura */
 }
 
-button {
-  z-index: 999;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 30px;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-}
-
-  button:hover {
-    background-color: #396b3b;
-  }
-
-.card.ativo {
+.main-cards-soletrando { /*SOLETRANDO*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  height: 200px;
-  width: 189px;
+  justify-content: center;
+  margin: 2rem ; /* Centraliza horizontalmente */
+  margin-left: 670px; /* Ajuste conforme necessário */
+  height: 250px;
+  width: 289px;
   border-radius: 15px;
-  box-shadow: #73b369 0px 4px 30px;
-  cursor: pointer;
+  cursor: pointer;;
 }
 
 .card {
@@ -260,10 +205,9 @@ button {
 }
 
 .card-figure {
-  width: 101%;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
+  display: flex; /* Ativa o Flexbox no contêiner pai */
+  align-items: center; 
+  justify-content: center; 
 }
 
 .audio-verde-img {
@@ -299,7 +243,56 @@ a.eu_ouco {
   border-radius: 10px;
 }
 
-/*CORES*/
+/*=================== CORES ===================*/
+
+.card.primarias,
+.card.secundarias,
+.card.terciarias {
+  display: none;
+}
+
+.buttons-cores {
+  text-align: center;
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+}
+
+button {
+  z-index: 999;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+  button:hover {
+    background-color: #396b3b;
+  }
+
+.card.ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 200px;
+  width: 189px;
+  border-radius: 15px;
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+}
 
 .amarelo {
   background-color: #ffd74a;
@@ -322,7 +315,7 @@ a.eu_ouco {
 }
 
 .roxo {
-  background-color: #901cec;
+  background-color: #913ad8;
 }
 
 .laranja {
@@ -354,7 +347,7 @@ a.eu_ouco {
 }
 
 .azul-arroxeado {
-  background-color: #5f5bce;
+  background-color: #514cdc;
 }
 
 .laranja-rosado {
@@ -365,7 +358,24 @@ a.eu_ouco {
   background-color: #fcb034;
 }
 
-/*FOOTER*/
+/* CORES SEM ULTILIZAÇÃO, CASO QUEIRA ULTILIZAR DESCOMENTE E ADICIONE A CLASSE NO HTML
+.marrom {
+  background-color: #d1795d;
+}
+
+.preto {
+  background-color: #000000;
+}
+
+.branco {
+  background-color: #ffffff;
+}
+
+.cinza {
+  background-color: #d9d9d9;
+}*/
+
+/*=================== FOOTER ===================*/
 .footer {
   bottom: 0;
   position: fixed;
@@ -443,4 +453,146 @@ a.eu_ouco {
   position: relative;
   top: 9px;
   width: 140%;
+}
+
+/*================== SOLETRANDO ==================*/
+
+/* Botões de letras: aparência padrão */
+.letra-btn {
+  background-color: #73b369;
+  color: #fff; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.6rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Estado desativado (feedback visual + cursor) */
+.letra-btn.disabled {
+  opacity: 0.5;
+  transform: scale(0.95);
+  cursor: not-allowed;
+}
+
+/* Estado de foco para teclado/acessibilidade */
+.letra-btn:focus {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
+}
+
+/* Hover com aumento visual */
+.letra-btn:hover:not(.disabled) {
+  background-color: #8eaf89;
+  transform: scale(1.1);
+}
+
+/* Novo: feedback de clique ativo */
+.letra-btn:active:not(.disabled) {
+  transform: scale(0.95);
+  background-color: #5e9e63;
+}
+
+/* Contêiner geral do jogo mais responsivo */
+.soletrando-container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Largura total do contêiner */
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-top: -10rem;
+}
+
+/* Contêiner dos botões de letras */
+.soletrando-letras {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaço entre os botões */
+  margin-top: 20px;
+}
+
+/* Texto de feedback (resposta correta ou errada) */
+.feedback {
+  margin-top: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Cor e estilo do feedback correto */
+.feedback.correto {
+  color: #4caf50;
+  font-weight: bold;
+  animation: pulse 0.5s ease; /* Animação opcional */
+}
+
+/* Cor e estilo do feedback errado */
+.feedback.errado {
+  color: #ff0000;
+  font-weight: bold;
+  animation: pulse 0.5s ease; /* Animação opcional */
+}
+
+/* Animação visual para feedback */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.card-img {
+ display: block;
+  height: 110%; /* Faz a imagem ocupar toda a altura do card */
+  width: 100%; /* Faz a imagem ocupar toda a largura do card */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
+  border-radius: 15px; /* Mantém o arredondamento */
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/*================== Animais ==================*/
+
+.pagina-animais .grupo .card{
+  margin: 10px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.pagina-animais .card-figure img{
+  height: 100%;
+  width: 100%; 
+  object-fit: cover; 
+  border-radius: 15px; 
+  box-shadow: #73b369 0px 4px 30px;
+  cursor: pointer;
+  overflow: hidden;
+}
+ 
+.button-grupo {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  position: absolute;
+  row-gap: 30px;
+  padding: 10px;
+  top: 150px; 
+  left: 50%;
+  transform: translateX(-50%); 
+}
+
+.button-grupo button{
+  padding: 15px 25px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.button-grupo button:hover {
+  background-color: #396b3b;
 }
