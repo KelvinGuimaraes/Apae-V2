@@ -1,7 +1,7 @@
 const allItems = [
   {
     palavra: "a Baleia",
-    imagem: "/src/images/animais/baleia.jpg",
+    imagem: "../images/animais/baleia.jpg",
     audioId: "../audio/adivinha/onde-esta-baleia.ogg",
     acertado: false,
   },
@@ -177,6 +177,16 @@ function endGame() {
   audioFinish.pause();
   audioFinish.currentTime = 0;
   audioFinish.play();
+
+  // Chama o confetti ao finalizar o jogo
+  if (typeof confetti === "function") {
+    confetti({
+      particleCount: 300,
+      spread: 120,
+      origin: { y: 0.6 }
+    });
+  }
+  
   messageEl.textContent = "Parabéns!! Todos os animais foram encontrados!";
   messageEl.classList.remove("errado");
   messageEl.classList.add("correto"); 

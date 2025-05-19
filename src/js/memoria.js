@@ -39,12 +39,20 @@ function tocarSom(nomeAnimal) {
 }
 
 function tocarSomSucesso() {
-  const audio = new Audio("/src/audio/animais/sucesso.mp3");
+  const audio = new Audio("/src/audio/efeito_acerto.mp3");
   audio.play();
 }
 
+function sortearItensParaRodada(qtdPares = 12) {
+  // Embaralha o array original e pega apenas a quantidade desejada
+  const itensEmbaralhados = [...items].sort(() => Math.random() - 0.5);
+  return itensEmbaralhados.slice(0, qtdPares);
+}
+
 function criarCartas() {
-  let itemsDuplicados = [...items, ...items];
+  container.innerHTML = ""; // Limpa o tabuleiro antes de criar novas cartas
+  let itensRodada = sortearItensParaRodada(12);
+  let itemsDuplicados = [...itensRodada, ...itensRodada];
   let animais = itemsDuplicados.sort(() => Math.random() - 0.5);
 
   animais.map((animal) => {
@@ -52,7 +60,7 @@ function criarCartas() {
       <div class="carta" data-carta="${animal.nome}">
         <div class="atras">?</div>
         <div class="frente">
-          <img src="${animal.imagem}" width="180" height="180" />
+          <img src="${animal.imagem}" width="160" height="160" />
         </div>
       </div>
     `;
@@ -97,6 +105,23 @@ function checarCartas() {
 
     primeiraCarta = "";
     segundaCarta = "";
+
+    function tocarSomSucessoFinal() {
+      const audio = new Audio("/src/audio/efeito-vitória.mp3");
+      audio.play();
+    }
+
+    // Verifica se todas as cartas foram encontradas
+    setTimeout(() => {
+      const cartasViradas = document.querySelectorAll('.carta-virada');
+      if (cartasViradas.length === 24) { // 12 pares = 24 cartas
+        tocarSomSucessoFinal();
+        document.querySelector('.tabuleiro').style.display = 'none';
+        document.getElementById('mensagem-parabens').style.display = 'block';
+        document.getElementById('btn-reiniciar').onclick = () => location.reload();
+      }
+    }, 400);
+
   } else {
     setTimeout(() => {
       primeiraCarta.classList.remove("carta-virada");
