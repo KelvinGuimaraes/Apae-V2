@@ -28,8 +28,15 @@ botoesContainer.classList.add("soletrando-letras");
 const tentativaTexto = document.createElement("p");
 tentativaTexto.classList.add("feedback");
 
+// Botão para jogar novamente
+const botaoReiniciar = document.createElement("button");
+botaoReiniciar.textContent = "Jogar Novamente";
+botaoReiniciar.classList.add("botao-reiniciar");
+botaoReiniciar.style.display = "none";
+botaoReiniciar.onclick = reiniciarJogo;
+
 document.body.querySelector(".main").after(container);
-container.append(botoesContainer, tentativaTexto);
+container.append(botoesContainer, tentativaTexto, botaoReiniciar);
 
 document.querySelector(".card-figure").append(imagem);
 container.append(imagem);
@@ -61,6 +68,14 @@ function embaralharArray(array) {
   return array;
 }
 
+function reiniciarJogo() {
+  indiceAtual = 0;
+  // Embaralha as palavras novamente
+  palavras.sort(() => 0.5 - Math.random());
+  botaoReiniciar.style.display = "none";
+  iniciarRodada();
+}
+
 function iniciarRodada() {
   botoesContainer.innerHTML = "";
   tentativa = "";
@@ -68,15 +83,13 @@ function iniciarRodada() {
   tentativaTexto.className = "feedback";
 
   if (indiceAtual >= palavras.length) {  
-    tentativaTexto.textContent =
-      "🎉 Parabéns! Você completou todas as palavras! Reiniciando...";
+    tentativaTexto.textContent = "🎉 Parabéns! Você completou todas as palavras!";
     tentativaTexto.classList.add("correto");
+    botaoReiniciar.style.display = "block"; // Mostra o botão de Jogar Novamente
 
     // TOCA SOM DE VITÓRIA
-    const somVitoria = new Audio("../audio/soletrando/efeito-vitória.mp3");
+    const somVitoria = new Audio("../audio/efeito-vitória.mp3");
     somVitoria.play();
-
-    setTimeout(reiniciarJogo, 5000); // Reinicia após 5 segundos (tempo da musica terminar)
     return;
   }
 
@@ -129,8 +142,8 @@ function iniciarRodada() {
 
         if (tentativa.length === palavraAtual.palavra.length) {
           if (tentativa === palavraAtual.palavra) {
-          // TOCA SOM DE ACERTO
-            const somAcerto = new Audio("../audio/soletrando/efeito_acerto.mp3");
+            // TOCA SOM DE ACERTO
+            const somAcerto = new Audio("../audio/efeito_acerto.mp3");
             somAcerto.play();
 
             tentativaTexto.textContent = "✅ Correto! Próxima palavra...";
@@ -139,7 +152,7 @@ function iniciarRodada() {
             setTimeout(iniciarRodada, 1500);
           } else {
             // TOCA SOM DE ERRO
-            const somErro = new Audio("../audio/soletrando/efeito-erro.mp3");
+            const somErro = new Audio("../audio/efeito-erro.mp3");
             somErro.play();
 
             tentativaTexto.textContent = "❌ Tente novamente!";
