@@ -46,8 +46,8 @@
 
     <main class="tabuleiro"></main>
 
-    <section id="mensagem-parabens" style="display:none; text-align:center; margin: 30px 0;">
-      <p>Parabéns! Você encontrou todos os pares!</p>
+    <section id="mensagem-parabens" class="mensagem-parabens">
+      <p class="Parabéns">Parabéns!! Você encontrou todos os pares!</p>
       <button id="btn-reiniciar">Jogar Novamente</button>
     </section>
 
@@ -75,19 +75,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
- <script>
-    const btn = document.getElementById("confettiBtn");
-    btn.addEventListener("click", () => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
+    <script>
+      const btn = document.getElementById("confettiBtn");
+      btn.addEventListener("click", () => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
       });
-    });
-  </script>
+    </script>
 
     <!-- JavaScript -->
     <script src="../js/memoria.js"></script>
-    
   </body>
 </html>

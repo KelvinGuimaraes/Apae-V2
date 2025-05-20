@@ -95,12 +95,6 @@ function checarCartas() {
   const segundoAnimal = segundaCarta.getAttribute("data-carta");
 
   if (primeiroAnimal === segundoAnimal && primeiraCarta !== segundaCarta) {
-    confetti({
-      particleCount: 300,
-      spread: 120,
-      origin: { y: 0.6 }
-    });
-
     tocarSomSucesso();
 
     primeiraCarta = "";
@@ -115,6 +109,11 @@ function checarCartas() {
     setTimeout(() => {
       const cartasViradas = document.querySelectorAll('.carta-virada');
       if (cartasViradas.length === 24) { // 12 pares = 24 cartas
+        confetti({
+          particleCount: 300,
+          spread: 120,
+          origin: { y: 0.6 }
+        });
         tocarSomSucessoFinal();
         document.querySelector('.tabuleiro').style.display = 'none';
         document.getElementById('mensagem-parabens').style.display = 'block';

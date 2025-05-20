@@ -240,6 +240,10 @@ function iniciarRodada() {
               tentativa = "";
               tentativaTexto.textContent = "";
               tentativaTexto.className = "feedback";
+
+               // TOCA O ÁUDIO DA PALAVRA NOVAMENTE APÓS O ERRO
+              const audioRepetir = new Audio(palavraAtual.audioId);
+              audioRepetir.play();
             }, 1500);
           }
         }

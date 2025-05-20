@@ -608,6 +608,26 @@ button {
 
 /*================== Memoria ==================*/
 
+#mensagem-parabens{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 40px auto;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+#mensagem-parabens p {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
 .memoria-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
