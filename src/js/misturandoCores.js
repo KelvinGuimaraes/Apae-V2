@@ -1,11 +1,18 @@
-// funcao do 3 botoes audio
-var clicouBotaoA = false;
+// Variáveis de controle dos botões
+let clicouBotaoA = false;
 let clicouBotaoB = false;
 let clicouBotaoC = false;
 
+// Funções de clique dos botões
 function A() {
   clicouBotaoA = true;
   document.getElementById("azul").play();
+  checkDoubleClick();
+}
+
+function B() {
+  clicouBotaoB = true;
+  document.getElementById("amarelo").play();
   checkDoubleClick();
 }
 
@@ -15,60 +22,60 @@ function C() {
   checkDoubleClick();
 }
 
-function B() {
-  clicouBotaoB = true;
-  document.getElementById("amarelo").play();
-  checkDoubleClick();
-}
-// funcao para verde
+// Verifica combinações para exibir o resultado
 function checkDoubleClick() {
+  const resultado = document.getElementById("resultado");
+  const textoResultado = resultado.querySelector("p");
+
   if (clicouBotaoA && clicouBotaoB) {
-    setTimeout(function () {
-      document.getElementById("resultado").style.display = "block";
-      document.getElementById("resultado").style.backgroundColor = "green";
-      document.getElementById("resultado").querySelector("p").innerText =
-        "Verde";
+    setTimeout(() => {
+      resultado.style.display = "block";
+      resultado.style.backgroundColor = "green";
+      textoResultado.innerText = "Verde";
       document.getElementById("verde").play();
     }, 1300);
     resetClicks();
     return;
   }
-  // funcao para roxo
+
   if (clicouBotaoA && clicouBotaoC) {
-    setTimeout(function () {
-      document.getElementById("resultado").style.display = "block";
-      document.getElementById("resultado").style.backgroundColor = "purple";
-      document.getElementById("resultado").querySelector("p").innerText =
-        "roxo";
+    setTimeout(() => {
+      resultado.style.display = "block";
+      resultado.style.backgroundColor = "purple";
+      textoResultado.innerText = "Roxo";
       document.getElementById("roxo").play();
     }, 1300);
     resetClicks();
     return;
   }
-  // funcao para laranja
+
   if (clicouBotaoC && clicouBotaoB) {
-    setTimeout(function () {
-      document.getElementById("resultado").style.display = "block";
-      document.getElementById("resultado").style.backgroundColor = "orange";
-      document.getElementById("resultado").querySelector("p").innerText =
-        "laranja";
+    setTimeout(() => {
+      resultado.style.display = "block";
+      resultado.style.backgroundColor = "orange";
+      textoResultado.innerText = "Laranja";
       document.getElementById("laranja").play();
     }, 1300);
     resetClicks();
     return;
   }
 }
-// Resetar variáveis
-let clicoureset = false;
-function reset() {
-  clicoureset = true;
+
+// Função para resetar os botões e limpar o estado
+function resetClicks() {
   clicouBotaoA = false;
   clicouBotaoB = false;
   clicouBotaoC = false;
+}
 
-  document.getElementById("resultado").style.backgroundColor = "#f8f8ff";
-  document.getElementById("resultado").querySelector("p").innerText =
-    "resultado";
-  resetClicks(1);
-  return;
+// Função de reset total (botão reset)
+function reset() {
+  resetClicks();
+
+  const resultado = document.getElementById("resultado");
+  const textoResultado = resultado.querySelector("p");
+
+  resultado.style.backgroundColor = "#f8f8ff";
+  textoResultado.innerText = "Resultado";
+  resultado.style.display = "block";
 }
