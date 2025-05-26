@@ -1,15 +1,59 @@
 const palavras = [
-  { palavra: "amarelo", imagem: "../images/soletrando/amarelo.jpeg", audioId: "../audio/soletrando/amarelo.mp3" },
-  { palavra: "vermelho", imagem: "../images/soletrando/vermelho.jpeg", audioId: "../audio/soletrando/vermelho.mp3" },
-  { palavra: "azul", imagem: "../images/soletrando/azul.jpeg", audioId: "../audio/soletrando/azul.mp3" },
-  { palavra: "casa", imagem: "../images/soletrando/casa.jpeg", audioId: "../audio/soletrando/casa.mp3" },
-  { palavra: "carro", imagem: "../images/soletrando/carro.jpeg", audioId: "../audio/soletrando/carro.mp3" },
-  { palavra: "bola", imagem: "../images/soletrando/bola.jpeg", audioId: "../audio/soletrando/bola.mp3" },
-  { palavra: "mamãe", imagem: "../images/soletrando/mamãe.jpeg", audioId: "../audio/soletrando/mamãe.mp3" },
-  { palavra: "papai", imagem: "../images/soletrando/papai.jpeg", audioId: "../audio/soletrando/papai.mp3" },
-  { palavra: "gato", imagem: "../images/soletrando/gato.jpeg", audioId: "../audio/soletrando/gato.mp3" },
-  { palavra: "cachorro", imagem: "../images/soletrando/cachorro.jpeg", audioId: "../audio/soletrando/cachorro.mp3" },
-  { palavra: "peixe", imagem: "../images/soletrando/peixe.jpeg", audioId: "../audio/soletrando/peixe.mp3" },
+  {
+    palavra: "amarelo",
+    imagem: "../images/soletrando/amarelo.jpeg",
+    audioId: "../audio/soletrando/amarelo.mp3",
+  },
+  {
+    palavra: "vermelho",
+    imagem: "../images/soletrando/vermelho.jpeg",
+    audioId: "../audio/soletrando/vermelho.mp3",
+  },
+  {
+    palavra: "azul",
+    imagem: "../images/soletrando/azul.jpeg",
+    audioId: "../audio/soletrando/azul.mp3",
+  },
+  {
+    palavra: "casa",
+    imagem: "../images/soletrando/casa.jpeg",
+    audioId: "../audio/soletrando/casa.mp3",
+  },
+  {
+    palavra: "carro",
+    imagem: "../images/soletrando/carro.jpeg",
+    audioId: "../audio/soletrando/carro.mp3",
+  },
+  {
+    palavra: "bola",
+    imagem: "../images/soletrando/bola.jpeg",
+    audioId: "../audio/soletrando/bola.mp3",
+  },
+  {
+    palavra: "mamãe",
+    imagem: "../images/soletrando/mamãe.jpeg",
+    audioId: "../audio/soletrando/mamãe.mp3",
+  },
+  {
+    palavra: "papai",
+    imagem: "../images/soletrando/papai.jpeg",
+    audioId: "../audio/soletrando/papai.mp3",
+  },
+  {
+    palavra: "gato",
+    imagem: "../images/soletrando/gato.jpeg",
+    audioId: "../audio/soletrando/gato.mp3",
+  },
+  {
+    palavra: "cachorro",
+    imagem: "../images/soletrando/cachorro.jpeg",
+    audioId: "../audio/soletrando/cachorro.mp3",
+  },
+  {
+    palavra: "peixe",
+    imagem: "../images/soletrando/peixe.jpeg",
+    audioId: "../audio/soletrando/peixe.mp3",
+  },
   // Adicionar os outros aqui (palavras, imagens e áudios)
 ];
 
@@ -37,18 +81,18 @@ container.append(imagem);
 //converte letras acentuadas para simples
 function normalizarLetra(letra) {
   const mapa = {
-    'á': 'a',
-    'à': 'a',
-    'ã': 'a',
-    'â': 'a',
-    'é': 'e',
-    'ê': 'e',
-    'í': 'i',
-    'ó': 'o',
-    'ô': 'o',
-    'õ': 'o',
-    'ú': 'u',
-    'ç': 'c',
+    á: "a",
+    à: "a",
+    ã: "a",
+    â: "a",
+    é: "e",
+    ê: "e",
+    í: "i",
+    ó: "o",
+    ô: "o",
+    õ: "o",
+    ú: "u",
+    ç: "c",
   };
   return mapa[letra] || letra;
 }
@@ -67,16 +111,55 @@ function iniciarRodada() {
   tentativaTexto.textContent = "";
   tentativaTexto.className = "feedback";
 
-  if (indiceAtual >= palavras.length) {  
+  // Remove botão de reinício se houver
+  const botaoExistente = document.getElementById("botao-reiniciar");
+  if (botaoExistente) botaoExistente.remove();
+
+  if (indiceAtual >= palavras.length) {
     tentativaTexto.textContent =
-      "🎉 Parabéns! Você completou todas as palavras! Reiniciando...";
+      "🎉 Parabéns! Você completou todas as palavras!";
     tentativaTexto.classList.add("correto");
 
-    // TOCA SOM DE VITÓRIA
-    const somVitoria = new Audio("../audio/soletrando/efeito-vitória.mp3");
+    // Som de vitória
+    const somVitoria = new Audio("../audio/efeito-vitória.mp3");
     somVitoria.play();
 
-    setTimeout(reiniciarJogo, 5000); // Reinicia após 5 segundos (tempo da musica terminar)
+    // Confete
+    if (typeof confetti === "function") {
+      confetti({
+        particleCount: 300,
+        spread: 120,
+        origin: { y: 0.6 },
+      });
+    }
+
+    // Esconde imagem final
+    imagem.style.display = "none";
+    const cardImagem = document.querySelector(".main-cards-soletrando");
+    if (cardImagem) cardImagem.style.display = "none";
+
+    // Cria botão de reinício
+    const botaoReiniciar = document.createElement("button");
+    botaoReiniciar.id = "botao-reiniciar";
+    botaoReiniciar.textContent = "Jogar Novamente";
+    botaoReiniciar.onclick = reiniciarJogo;
+
+    // Estiliza botão diretamente no JS
+    botaoReiniciar.style.position = "fixed";
+    botaoReiniciar.style.top = "50%";
+    botaoReiniciar.style.left = "50%";
+    botaoReiniciar.style.transform = "translate(-50%, -50%)";
+    botaoReiniciar.style.zIndex = "1000";
+    botaoReiniciar.style.padding = "1rem 2rem";
+    botaoReiniciar.style.fontSize = "1.5rem";
+    botaoReiniciar.style.backgroundColor = "#5e9e63";
+    botaoReiniciar.style.color = "#fff";
+    botaoReiniciar.style.border = "none";
+    botaoReiniciar.style.borderRadius = "12px";
+    botaoReiniciar.style.cursor = "pointer";
+    botaoReiniciar.style.boxShadow = "#73b369 0px 4px 30px;";
+
+    document.body.appendChild(botaoReiniciar);
     return;
   }
 
@@ -119,7 +202,10 @@ function iniciarRodada() {
         // TOCA O SOM DA LETRA NORMALIZADA
         const somLetra = new Audio(`../audio/letras/${letraNormalizada}.mp3`);
         somLetra.play().catch((error) => {
-          console.warn(`Erro ao tocar som da letra '${letraNormalizada}':`, error);
+          console.warn(
+            `Erro ao tocar som da letra '${letraNormalizada}':`,
+            error
+          );
         });
 
         btn.dataset.used = "true";
@@ -129,8 +215,8 @@ function iniciarRodada() {
 
         if (tentativa.length === palavraAtual.palavra.length) {
           if (tentativa === palavraAtual.palavra) {
-          // TOCA SOM DE ACERTO
-            const somAcerto = new Audio("../audio/soletrando/efeito_acerto.mp3");
+            // TOCA SOM DE ACERTO
+            const somAcerto = new Audio("../audio/efeito_acerto.mp3");
             somAcerto.play();
 
             tentativaTexto.textContent = "✅ Correto! Próxima palavra...";
@@ -139,7 +225,7 @@ function iniciarRodada() {
             setTimeout(iniciarRodada, 1500);
           } else {
             // TOCA SOM DE ERRO
-            const somErro = new Audio("../audio/soletrando/efeito-erro.mp3");
+            const somErro = new Audio("../audio/efeito-erro.mp3");
             somErro.play();
 
             tentativaTexto.textContent = "❌ Tente novamente!";
@@ -154,6 +240,10 @@ function iniciarRodada() {
               tentativa = "";
               tentativaTexto.textContent = "";
               tentativaTexto.className = "feedback";
+
+               // TOCA O ÁUDIO DA PALAVRA NOVAMENTE APÓS O ERRO
+              const audioRepetir = new Audio(palavraAtual.audioId);
+              audioRepetir.play();
             }, 1500);
           }
         }
@@ -162,7 +252,21 @@ function iniciarRodada() {
     botoesContainer.appendChild(btn);
   });
 }
+// Função para reiniciar o jogo
+function reiniciarJogo() {
+  indiceAtual = 0;
+  tentativa = "";
+  const botao = document.getElementById("botao-reiniciar");
+  if (botao) botao.remove();
 
-// Embaralha as palavras no início do jogo
+  const cardImagem = document.querySelector(".main-cards-soletrando");
+  if (cardImagem) cardImagem.style.display = "block";
+  imagem.style.display = "block";
+
+  palavras.sort(() => 0.5 - Math.random());
+  iniciarRodada();
+}
+
+// Embaralha as palavras no início
 palavras.sort(() => 0.5 - Math.random());
 iniciarRodada();
